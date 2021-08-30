@@ -35,33 +35,32 @@ paginate = 10
 [[menu.main]]
     name       = "Suporte/GLPI"
     identifier = "menu.glpi"
-    url        = "/img/template-homepage.png"
     weight     = 3
 
 [[menu.main]]
     name       = "Credinova"
-    identifier = "section.credinova"
-    url        = "/glpi/4117"
+    identifier = "menu.credinova"
+    url        = "https://arcominf.com.br/glpi/4117"
     weight     = 1
     parent     = "menu.glpi"
 
 [[menu.main]]
     name       = "Sicoob Centrooeste"
-    identifier = "section.scentrooeste"
-    url        = "/glpi/4101"
+    identifier = "menu.scentrooeste"
+    url        = "https://arcominf.com.br/glpi/4101"
     weight     = 1
     parent     = "menu.glpi"
 
 [[menu.main]]
     name       = "Webmail"
     identifier = "menu.Webmail"
-    url        = "/SOgo"
+    url        = "https://arcominf.com.br/SOGo"
     weight     = 4
 
 [[menu.main]]
     name       = "Backup"
     identifier = "menu.Backup"
-    url        = "/backup"
+#    url        = "/backup"
     weight     = 4
 
 # Top bar social links menu
