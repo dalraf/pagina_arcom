@@ -1,6 +1,6 @@
 +++
 title = "Contato"
-id = "contato"
+id = "contact"
 +++
 
 # Estamos aqui pra te ajudar.
