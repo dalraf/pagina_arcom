@@ -17,30 +17,37 @@ This Hugo theme was ported from [Bootstrapious](http://bootstrapious.com/p/unive
 
 ## Table of Contents
 
-* [Features](#features)
-* [Installation](#installation)
-* [Configuration](#configuration)
-  * [Style](#style)
-  * [Comments](#comments)
-  * [Google Analytics](#google-analytics)
-  * [Contact form](#contact-form)
-  * [Menu](#menu)
-  * [Sidebar widgets](#sidebar-widgets)
-  * [Blog post thumbnails](#blog-post-thumbnails)
-  * [Top bar](#top-bar)
-  * [Landing page](#landing-page)
-    * [Carousel](#carousel)
-    * [Features](#features)
-    * [Testimonials](#testimonials)
-    * [See more](#see-more)
-    * [Clients](#clients)
-    * [Recent posts](#recent-posts)
-    * [Footer](#footer)
-  * [Meta tags](#meta-tags)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [License](#license)
-* [Thanks](#thanks)
+- [Universal Theme for Hugo](#universal-theme-for-hugo)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+    - [Language](#language)
+    - [Style](#style)
+    - [Comments](#comments)
+    - [Google Analytics](#google-analytics)
+    - [Logo](#logo)
+    - [Contact form](#contact-form)
+    - [Menu](#menu)
+    - [Sidebar widgets](#sidebar-widgets)
+    - [Top bar](#top-bar)
+    - [Blog post thumbnails](#blog-post-thumbnails)
+    - [Landing page](#landing-page)
+      - [Carousel](#carousel)
+      - [Features](#features-1)
+      - [Testimonials](#testimonials)
+      - [See more](#see-more)
+      - [Clients](#clients)
+      - [Recent posts](#recent-posts)
+      - [Footer](#footer)
+        - [About us](#about-us)
+        - [Recent posts](#recent-posts-1)
+        - [Contact](#contact)
+    - [Meta tags](#meta-tags)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Thanks](#thanks)
 
 ## Features
 
@@ -120,7 +127,7 @@ Leave the `googleAnalytics` key empty to disable it.
 
 ### Logo
 
-A logo can be selected, two parameters `logo` and `logo_small` can be defined. By default `logo` is used for medium and big screens and the `logo_small` value will be used when the site is rendered on small screens. Also there is the posibility to disable the logo and render a alternative text.
+A logo can be selected, two parameters `logo` and `logo_small` can be defined. By default `logo` is used for medium and big screens and the `logo_small` value will be used when the site is rendered on small screens. Also there is the possibility to disable the logo and render a alternative text.
 
 ```toml
 [params]
@@ -158,7 +165,7 @@ Example configuration:
     direction = "Desamparados Station, Distrito de Lima 15001, Peru"
 ```
 
-Since Hugo sites are static, the contact form uses [Formspree](https://formspree.io/) as a proxy. The form makes a POST request to their servers to send the actual email. Visitors can send up to a 1000 emails each month for free.
+Since Hugo sites are static, the contact form uses [Formspree](https://formspree.io/) as a proxy. The form makes a POST request to their servers to send the actual email. Formspree and the submissions for the free plan are limited, [checkout the plans for details](https://formspree.io/plans).
 
 To enable the form in the contact page, just type your Formspree email in the `config.toml` file, and specify whether to use ajax(paid) to send request or plain HTTP POST(free). Also there is the possibility to enable a captcha using recaptcha.
 
@@ -215,7 +222,7 @@ It is also possible to display a dropdown menu with 4 columns. This theme suppor
 * 4 columns of menu items with sections
 * 2 column wide image + 2 columns of menu items with sections
 
-To display 4 columns of menu items, start using sections. Sections are menu items threated special by this theme:
+To display 4 columns of menu items, start using sections. Sections are menu items treated special by this theme:
 
 ```
 [[menu.main]]
@@ -338,6 +345,15 @@ The social links on the right side are configured as a top-level menu.
     pre = "<i class='fas fa-2x fa-facebook'></i>"
 ```
 
+### Menu behavior
+
+The dropdown menu is displayed by default when the user clicks on the menu item. However, you can also use the `dropdown_mouse_over` setting to change this behavior and use the mouse over instead.
+
+```toml
+[params]
+    dropdown_mouse_over = true
+```
+
 ### Blog post thumbnails
 
 After creating a new post you can define a banner by entering the relative path to the image.
@@ -377,9 +393,10 @@ description: >
     <li>Easily to change fonts</li>
   </ul>
 image: "img/carousel/template-easy-code.png"
+href: "https://devcows.github.io/hugo-universal-theme/"
 ```
 
-The `weight` field determines the position of the entry. `title` is a text-only field. The `description` field accepts HTML code. And the `image` must contain the relative path to the image inside the `static` directory.
+The `weight` field determines the position of the entry. `title` is a text-only field. The `description` field accepts HTML code. The `image` must contain the relative path to the image inside the `static` directory. The optional `href` field contains a relative or absolute url that the user will be redirected to when clicking the carousel (specific to each carousel item).
 
 Once the carousel is configured, some options can be defined like: auto play, speed, etc. in the `config.toml` file.
 
@@ -535,6 +552,7 @@ summaryLength = 70
 ```
 
 Recent posts use `.Summary` property and by default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use in your templates. You may customize the summary length by setting summaryLength in your site configuration.
+When setting the `hide_summary` configuration property to `true` the summary will be hidden on the recent posts as well as the blogs list page.
 
 #### Footer
 
@@ -560,10 +578,11 @@ Recent posts block can be enabled or disabled (hidden).
 
 ##### Contact
 
-A text can be defined, in case there is no text defined the entire block will be hidden:
+In contact section there is a button to redirect to contact page, there is the possibility to customize the url also a contact text can be defined, in case there is no text defined the entire block will be hidden:
 
 ```toml
 [params]
+    contact_url = "/contact"
     address = """<p class="text-uppercase"><strong>Universal Ltd.</strong>
         <br>13/25 New Avenue
         <br>Newtown upon River
@@ -663,7 +682,7 @@ For more information check out the official [Hugo documentation](http://gohugo.i
 
 ## Contributing
 
-Did you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/devcows/hugo-universal-theme/issues) to let us know. Or make directly a [pull request](https://github.com/devcows/hugo-universal-theme/pulls).
+Did you find a bug or do you have an idea for a new feature? Feel free to use the [issue tracker](https://github.com/devcows/hugo-universal-theme/issues) to let us know. Or make a [pull request](https://github.com/devcows/hugo-universal-theme/pulls) directly.
 
 
 ## License
