@@ -1,8 +1,10 @@
-server:
-  image: klakegg/hugo:0.83.1
-  restart: always
-  command: server
-  volumes:
-    - ".:/src"
-  ports:
-    - "8000:1313"
+version: '3'
+services:
+  hugo:
+    image: klakegg/hugo
+    restart: always
+    command: server
+    volumes:
+      - ".:/src"
+    ports:
+      - "8000:1313"
