@@ -40,28 +40,17 @@ paginate = 10
 [[menu.main]]
     name       = "Credinova"
     identifier = "menu.credinova"
-    url        = "https://arcominf.com.br/glpi/4117"
+    url        = "https://glpi-4117.arcominf.com.br"
     weight     = 1
     parent     = "menu.glpi"
 
-[[menu.main]]
-    name       = "Sicoob Centrooeste"
-    identifier = "menu.scentrooeste"
-    url        = "https://arcominf.com.br/glpi/4101"
-    weight     = 1
-    parent     = "menu.glpi"
 
 [[menu.main]]
     name       = "Webmail"
     identifier = "menu.Webmail"
-    url        = "https://arcominf.com.br/SOGo"
+    url        = "https://mail.arcominf.com.br/SOGo"
     weight     = 4
 
-[[menu.main]]
-    name       = "Backup"
-    identifier = "menu.Backup"
-#    url        = "/backup"
-    weight     = 4
 
 # Top bar social links menu
 
